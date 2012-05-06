@@ -1,4 +1,9 @@
-jdto-sample-projects
-====================
+jDTO Binder Sample Projects
+===========================
 
-Sample projects using the jDTO Binder Framework
+This project is intended to provide sample code that demonstrates the features of jDTO Binder framework.
+
+For more information check out http://www.jdto.org
+
+If you have questions or need assistance, please write to jdto@jdto.org.
+

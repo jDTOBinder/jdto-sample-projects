@@ -3,6 +3,7 @@ package org.jdto.demo.dtos;
 import java.io.Serializable;
 import org.jdto.annotation.Source;
 import org.jdto.mergers.DateFormatMerger;
+import org.jdto.mergers.MethodCallMerger;
 import org.jdto.mergers.SumMerger;
 
 /**
@@ -27,7 +28,11 @@ public class OrderDTO implements Serializable {
     
     @Source(value="pizzas", merger=SumMerger.class, mergerParam="price")
     private Double orderPrice;
-
+    
+    /** New feature in 1.1 */
+    @Source(value="pizzas",  merger=MethodCallMerger.class, mergerParam="size")
+    private int pizzaCount;
+    
     public String getCustomerAddress() {
         return customerAddress;
     }
@@ -74,6 +79,14 @@ public class OrderDTO implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public int getPizzaCount() {
+        return pizzaCount;
+    }
+
+    public void setPizzaCount(int pizzaCount) {
+        this.pizzaCount = pizzaCount;
     }
     
 }

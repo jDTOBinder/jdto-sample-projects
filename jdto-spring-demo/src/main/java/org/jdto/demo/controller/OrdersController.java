@@ -14,6 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class OrdersController implements Serializable {
     
+    private static final long serialVersionUID = 1L;
+    
     @Autowired
     private PizzaOrderService ordersService;
     

@@ -22,6 +22,7 @@
                     <th>Customer Address</th>
                     <th>Customer Phone</th>
                     <th>Order Date</th>
+                    <th>Pizzas</th>
                     <th>Price</th>
                 </tr>
             </thead>
@@ -32,6 +33,7 @@
                         <td>${order.customerAddress}</td>
                         <td>${order.customerPhone}</td>
                         <td>${order.orderDate}</td>
+                        <td>${order.pizzaCount}</td>
                         <td>${order.orderPrice}</td>
                     </tr>
                 </c:forEach>

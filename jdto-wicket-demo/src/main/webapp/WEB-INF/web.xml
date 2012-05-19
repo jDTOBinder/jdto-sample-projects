@@ -9,6 +9,16 @@
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    
+    <!-- spring framework servlet context listener and request context listener -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    
+    <!-- wicket filter -->
     <filter>
         <filter-name>wicket-filter</filter-name>
         <filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>

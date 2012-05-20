@@ -10,6 +10,7 @@ import org.jdto.mergers.StringFormatMerger;
  * @author juancavallotti
  */
 public class PizzaDTO implements Serializable {
+    private static final long serialVersionUID = 1L;
     
     @Source("id")
     private Long pizzaId;

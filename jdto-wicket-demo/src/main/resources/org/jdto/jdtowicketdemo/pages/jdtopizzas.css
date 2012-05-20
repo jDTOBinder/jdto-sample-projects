@@ -1,0 +1,129 @@
+/* import the google web font  */
+@import url(http://fonts.googleapis.com/css?family=Averia+Libre:700);
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+
+body {
+    background-color: #e8e8e8;
+    font-family: 'Oxygen', sans-serif;
+}
+
+h1 {
+    font-family: 'Averia Libre', cursive;
+    text-align: center;
+}
+
+.feedbackPanel {
+    border: 1px solid red;
+    background-color: #ffdddd;
+    list-style: none;
+    font-size: 10pt;
+    margin: 6px;
+}
+
+.pizzaMenu {
+    margin: 20px 0;
+    display: block;
+    width: 340px;
+    height: 250px;
+    background-color: #ffffcc;
+    border: 2px solid black;
+    -webkit-transform:rotate(-8deg);
+    -moz-transform:rotate(-8deg);
+    -ms-transform: rotate(-8deg);
+    box-shadow: 6px 6px 5px #888;
+}
+
+.pizzaMenu h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.currentOrder {
+    position: absolute;
+    width: auto;
+    top: 150px;
+    left: 380px;
+    right: 20px;
+    background-color: white;
+    border: 2px solid black;
+}
+
+.currentOrder button {
+    padding: 8px;
+    border: 2px solid #ccc;
+}
+
+.currentOrder h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.currentOrder table {
+    margin: 12px 8px;
+    width: 98%;
+}
+
+.currentOrder table thead th {    
+    border-bottom: 2px solid black;
+}
+
+.currentOrder table thead th:nth-child(1) {
+    width: 70%;
+}
+.currentOrder table thead th:nth-child(2) {
+    width: 15%;
+}
+.currentOrder table tbody td:nth-child(1) {
+    padding-left: 8px;
+}
+
+.currentOrder table + div {
+    text-align: right;
+    font-weight: bold;
+    margin-right: 12px;
+}
+
+.currentOrder label {
+    float: left;
+    width: 140px;
+    text-align: right;
+    font-size: 10pt;
+    font-weight: bold;
+    clear: left;
+    padding: 2px;
+}
+
+.currentOrder input {
+    width: 380px;
+}
+
+.currentOrder .submitButtonPanel {
+    text-align: center;
+}
+
+/********* The orders list page ********/
+.ordersTable {
+    background-color: white;
+    border: 1px solid black;
+    width: 98%;
+    margin: auto;
+    margin-top: 12px;
+}
+
+.ordersTable thead th {
+    width: 10%;
+    border-bottom: 2px solid black;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+.ordersTable tbody td {
+    font-size: 10pt;
+}
+.ordersTable thead th:nth-child(1), .ordersTable thead th:nth-child(2) {
+    width: 25%;
+}
+
+.ordersTable thead th:nth-child(3) {
+    width: 20%;
+}

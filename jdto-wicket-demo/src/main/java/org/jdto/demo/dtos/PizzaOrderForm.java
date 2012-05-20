@@ -12,6 +12,7 @@ import org.jdto.annotation.Source;
  * @author juancavallotti
  */
 public class PizzaOrderForm implements Serializable {
+    private static final long serialVersionUID = 1L;
     
     @NotEmpty //validation annotation
     @Source("whoOrderedName")

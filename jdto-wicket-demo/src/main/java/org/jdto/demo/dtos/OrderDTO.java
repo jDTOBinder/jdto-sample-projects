@@ -26,6 +26,9 @@ public class OrderDTO implements Serializable {
     @Source(value="orderDate", merger=DateFormatMerger.class, mergerParam="MM/dd/yyyy hh:mm")
     private String orderDate;
     
+    @Source("orderDate")
+    private String date;
+    
     @Source(value="pizzas", merger=SumMerger.class, mergerParam="price")
     private Double orderPrice;
     
@@ -87,6 +90,14 @@ public class OrderDTO implements Serializable {
 
     public void setPizzaCount(int pizzaCount) {
         this.pizzaCount = pizzaCount;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
     
 }

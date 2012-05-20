@@ -1,10 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:wicket="http://git-wip-us.apache.org/repos/asf/wicket/repo?p=wicket.git;a=blob_plain;f=wicket-core/src/main/resources/META-INF/wicket-1.5.xsd;hb=master" 
+      xml:lang="en" lang="en">
     <head>
-        <title>TODO supply a title</title>
+        <title>jDTO Binder Pizza Orders!</title>
+        <wicket:link>
+            <link rel="stylesheet" type="text/css" href="jdtopizzas.css" />
+        </wicket:link>
     </head>
     <body>
-        <div>TODO write content</div>
+        <h1>jDTO Binder Pizzas</h1>
+        <p>This sample project shows jDTO Binder in action with wicket!</p>
+        <p>Take a look at the <wicket:link><a href="ViewOrdersPage.html">orders you have already created</a></wicket:link>.</p>
+        <div class="pizzaMenu">
+            <h2>Menu</h2>
+            <ul>
+                <li wicket:id="pizzaList"><span wicket:id="description"></span> <a wicket:id="addPizzaLink">Add To Order</a></li>
+            </ul>
+        </div>
+        <div class="currentOrder">
+            <h2>Current Order</h2>
+            <div wicket:id="feedbackPanel">Feedback from the client</div>
+            <form wicket:id="orderForm">
+                <div><label>Customer Name:</label><input type="text" wicket:id="customerName" /></div>
+                <div><label>Customer Phone:</label><input type="text" wicket:id="customerPhone" /></div>
+                <div><label>Customer Address:</label><input type="text" wicket:id="customerAddress" /></div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pizza Name</th>
+                            <th>Rating</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr wicket:id="pizzas">
+                            <td wicket:id="description"></td>
+                            <td wicket:id="rating"></td>
+                            <td><a href="javascript:void(0)" wicket:id="removeItemButton">Remove</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>Total: <span wicket:id="orderTotal"></span></div>
+                <div class="submitButtonPanel"><button type="submit" wicket:id="placeOrderButton">Place Order</button></div>
+            </form>
+        </div>
     </body>
 </html>

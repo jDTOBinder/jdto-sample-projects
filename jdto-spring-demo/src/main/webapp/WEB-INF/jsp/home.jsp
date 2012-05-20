@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Pizza Orders!</title>
+        <title>jDTO Binder Pizza Orders!</title>
     </head>
     <body>
         <h1>New Pizza Order</h1>

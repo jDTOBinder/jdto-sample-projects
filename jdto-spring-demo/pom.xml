@@ -17,12 +17,6 @@
     </properties>
     
     <repositories>
-        <!-- jdto binder -->
-        <repository>
-            <id>org.jdto</id>
-            <layout>default</layout>
-            <url>http://maven2.jdto.org/</url>
-        </repository>
         <!-- hibernate -->
         <repository>
             <id>jboss-public-repository-group</id>

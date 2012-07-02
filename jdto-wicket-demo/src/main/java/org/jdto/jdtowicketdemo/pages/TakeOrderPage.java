@@ -15,9 +15,11 @@ import org.apache.wicket.markup.html.panel.FeedbackPanel;
 import org.apache.wicket.model.CompoundPropertyModel;
 import org.apache.wicket.model.PropertyModel;
 import org.apache.wicket.spring.injection.annot.SpringBean;
+import org.jdto.DTOBinder;
 import org.jdto.demo.dtos.PizzaDTO;
 import org.jdto.demo.dtos.PizzaOrderForm;
 import org.jdto.demo.service.PizzaOrderService;
+import org.jdto.mergers.SumMerger;
 
 /**
  * Page for taking new pizza orders.
@@ -27,8 +29,12 @@ import org.jdto.demo.service.PizzaOrderService;
 public class TakeOrderPage extends WebPage {
 
     private static final long serialVersionUID = 1L;
+    
     @SpringBean
     private PizzaOrderService service;
+    
+    @SpringBean
+    private DTOBinder binder;
     
     //references to some components
     private Form<PizzaOrderForm> orderForm;
@@ -73,9 +79,9 @@ public class TakeOrderPage extends WebPage {
 
     private void updateTotal() {
         total = 0;
-        for (PizzaDTO pizzaDTO : orderForm.getModelObject().getPizzas()) {
-            total += pizzaDTO.getPrice();
-        }
+        //reuse the sum merger.
+        SumMerger merger = binder.getPropertyValueMerger(SumMerger.class);
+        total = merger.mergeObjects(orderForm.getModelObject().getPizzas(), new String[] {"price"});
     }
     
     /**

@@ -16,6 +16,17 @@ Besides demonstrating how you can setup a wicket project and make it work with s
 * How to link between pages without having to write java code.
 * The use of the ajax table.
 
+As part of jDTO Binder 1.2 you can reuse the functionality of the mergers as shown on the following snippet.
+
+```java
+private void updateTotal() {
+    total = 0;
+    //reuse the sum merger.
+    SumMerger merger = binder.getPropertyValueMerger(SumMerger.class);
+    total = merger.mergeObjects(orderForm.getModelObject().getPizzas(), new String[] {"price"});
+}
+````
+
 This simple application has the following domain model:
 
 The Pizza class represents a simple product.

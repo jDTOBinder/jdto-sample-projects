@@ -3,6 +3,7 @@ package org.jdto.demo.dtos;
 import java.io.Serializable;
 import org.jdto.annotation.Source;
 import org.jdto.annotation.Sources;
+import org.jdto.mergers.GroovyMerger;
 import org.jdto.mergers.StringFormatMerger;
 
 /**
@@ -21,7 +22,9 @@ public class PizzaDTO implements Serializable {
     private String description;
     
     private double price;
-    private int rating;
+    
+    @Source(value="rating", merger=GroovyMerger.class, mergerParam="sourceValue == null ? 'Not Rated' : '*' * sourceValue ")
+    private String rating;
 
     public String getDescription() {
         return description;
@@ -39,11 +42,11 @@ public class PizzaDTO implements Serializable {
         this.pizzaId = pizzaId;
     }
 
-    public int getRating() {
+    public String getRating() {
         return rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(String rating) {
         this.rating = rating;
     }
 

@@ -34,11 +34,13 @@ class InitialDataLoader {
         Pizza special = new Pizza("Special Ham Pizza", 5, 10.0);
         Pizza onion = new Pizza("Onion Pizza", 4, 9.0);
         Pizza anchovy = new Pizza("Anchovy Pizza", 2, 7.95);
+        Pizza california = new Pizza("California Eggs & Bacon", null, 14.75);
         
         template.save(pepperoni);
         template.save(mozzarella);
         template.save(special);
         template.save(onion);
         template.save(anchovy);
+        template.save(california);
     }
 }
